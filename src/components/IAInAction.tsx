@@ -4,11 +4,11 @@ import { Clock, Brain, DollarSign, Target, MessageSquare, BarChart3 } from 'luci
 
 const benefits = [
   { icon: Clock, text: 'Atende 24h/dia, 7 dias por semana — sem folga, sem atraso' },
-  { icon: Brain, text: 'Identifica tecidos por foto e nome, consultando o catálogo real' },
-  { icon: DollarSign, text: 'Informa preços, promoções e links diretos do e-commerce' },
-  { icon: Target, text: 'Qualifica o cliente: ocasião, orçamento, urgência' },
-  { icon: MessageSquare, text: 'Transfere para atendente humano quando o cliente está pronto' },
-  { icon: BarChart3, text: 'Gera dados: tecidos mais pedidos, horários de pico, dúvidas frequentes' },
+  { icon: Brain, text: 'Reconhece produtos por foto e nome, consultando seu catálogo' },
+  { icon: DollarSign, text: 'Informa preços, promoções e disponibilidade automaticamente' },
+  { icon: Target, text: 'Qualifica o cliente antes de passar para sua equipe' },
+  { icon: MessageSquare, text: 'Transfere para atendente humano na hora certa' },
+  { icon: BarChart3, text: 'Gera relatórios: produtos mais pedidos, horários de pico' },
 ];
 
 const IAInAction = () => {
@@ -21,12 +21,9 @@ const IAInAction = () => {
           <h2 className="font-heading font-extrabold text-3xl lg:text-4xl mb-4">
             Veja a IA Vendendo Enquanto Você Dorme
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-3">
-            Este é um exemplo real de como nossos agentes de IA funcionam no WhatsApp de uma loja de tecidos finos.
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Veja como nossos agentes de IA atendem, qualificam e vendem pelo WhatsApp — de forma automática e personalizada.
           </p>
-          <span className="inline-block font-mono text-xs px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
-            Case Real: Em Implementação
-          </span>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -42,49 +39,42 @@ const IAInAction = () => {
                 <div className="px-4 py-3 flex items-center gap-3" style={{ backgroundColor: 'hsl(152 44% 28%)' }}>
                   <div className="w-8 h-8 rounded-full bg-primary/30 flex items-center justify-center text-xs">✨</div>
                   <div>
-                    <div className="text-xs font-bold text-primary-foreground">Sofia ✨ — Tecidos Finos</div>
+                    <div className="text-xs font-bold text-primary-foreground">Assistente IA ✨</div>
                     <div className="text-[10px] text-primary-foreground/60">online</div>
                   </div>
                 </div>
                 {/* Messages */}
                 <div className="p-3 space-y-2 min-h-[360px]" style={{ backgroundColor: 'hsl(222 30% 10%)' }}>
-                  {/* Received */}
                   <div className="flex justify-start">
                     <div className="bg-muted/60 rounded-xl rounded-tl-sm px-3 py-2 max-w-[80%]">
-                      <p className="text-xs text-foreground/90">Oi, quero ver tecidos para casamento</p>
+                      <p className="text-xs text-foreground/90">Oi, quero saber mais sobre os produtos</p>
                       <span className="text-[9px] text-muted-foreground block text-right mt-0.5">14:23</span>
                     </div>
                   </div>
-                  {/* Sent */}
                   <div className="flex justify-end">
                     <div className="rounded-xl rounded-tr-sm px-3 py-2 max-w-[80%]" style={{ backgroundColor: 'hsl(152 44% 28% / 0.4)' }}>
                       <p className="text-xs text-foreground/90">
-                        Oi! ✨ Sou a Sofia, da Tecidos Finos! Para casamento, temos opções maravilhosas! Você procura renda, tule ou bordado?
+                        Olá! ✨ Que bom ter você aqui! Posso te ajudar a encontrar o produto ideal. O que você está procurando?
                       </p>
                       <span className="text-[9px] text-muted-foreground block text-right mt-0.5">14:23 ✓✓</span>
                     </div>
                   </div>
-                  {/* Received */}
                   <div className="flex justify-start">
                     <div className="bg-muted/60 rounded-xl rounded-tl-sm px-3 py-2">
-                      <p className="text-xs text-foreground/90">Renda</p>
+                      <p className="text-xs text-foreground/90">Quero ver as opções disponíveis</p>
                       <span className="text-[9px] text-muted-foreground block text-right mt-0.5">14:24</span>
                     </div>
                   </div>
-                  {/* Sent - Long */}
                   <div className="flex justify-end">
                     <div className="rounded-xl rounded-tr-sm px-3 py-2 max-w-[85%]" style={{ backgroundColor: 'hsl(152 44% 28% / 0.4)' }}>
                       <p className="text-xs text-foreground/90">
-                        Temos opções incríveis! 🧵<br />
-                        • Renda Chantilly — R$128/m<br />
-                        • Renda Francesa — R$98/m<br />
-                        • Coleção Dubai — R$398/m<br /><br />
-                        Qual te interessa mais?
+                        Temos várias opções! 🎯<br />
+                        Vou te mostrar as mais procuradas com preços e disponibilidade.<br /><br />
+                        Quer que eu filtre por categoria ou orçamento?
                       </p>
                       <span className="text-[9px] text-muted-foreground block text-right mt-0.5">14:24 ✓✓</span>
                     </div>
                   </div>
-                  {/* Received - Image placeholder */}
                   <div className="flex justify-start">
                     <div className="bg-muted/60 rounded-xl rounded-tl-sm px-3 py-2">
                       <div className="w-28 h-20 bg-muted/40 rounded-lg flex items-center justify-center text-muted-foreground text-lg mb-1">📷</div>
@@ -92,11 +82,10 @@ const IAInAction = () => {
                       <span className="text-[9px] text-muted-foreground block text-right mt-0.5">14:25</span>
                     </div>
                   </div>
-                  {/* Sent */}
                   <div className="flex justify-end">
                     <div className="rounded-xl rounded-tr-sm px-3 py-2 max-w-[85%]" style={{ backgroundColor: 'hsl(152 44% 28% / 0.4)' }}>
                       <p className="text-xs text-foreground/90">
-                        Pela foto, parece um tule bordado com pedrarias! ✨ Temos o Dubai TF2208 — R$398/m com frete grátis para SP! Quer mais detalhes?
+                        Identifiquei pela foto! ✨ Temos opções muito similares em estoque. Posso te passar os detalhes e valores?
                       </p>
                       <span className="text-[9px] text-muted-foreground block text-right mt-0.5">14:25 ✓✓</span>
                     </div>
@@ -108,7 +97,7 @@ const IAInAction = () => {
 
           {/* Right side - Benefits */}
           <div className={`space-y-6 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-            <h3 className="font-heading font-bold text-xl lg:text-2xl">O que a Sofia faz pelo negócio:</h3>
+            <h3 className="font-heading font-bold text-xl lg:text-2xl">O que a IA faz pelo seu negócio:</h3>
             <div className="space-y-3">
               {benefits.map(({ icon: Icon, text }) => (
                 <div key={text} className="glass-card p-4 flex items-start gap-3 card-hover">
@@ -118,7 +107,7 @@ const IAInAction = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground italic">
-              Resultado: o dono da loja foca em vender para quem está pronto, enquanto a Sofia cuida de todo o resto.
+              Resultado: você foca em vender para quem está pronto, enquanto a IA cuida de todo o resto.
             </p>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary-cta inline-flex">
               Quero um Agente de IA →

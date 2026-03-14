@@ -1,4 +1,5 @@
 import logoLight from '@/assets/logo-light.png';
+import { Instagram, Phone, Mail, Globe } from 'lucide-react';
 
 const footerLinks = [
   { label: 'Início', href: '#inicio' },
@@ -18,6 +19,11 @@ const Footer = () => (
           <p className="text-sm text-muted-foreground leading-relaxed">
             Inovação que Conecta e Converte. Estratégia de tráfego pago e automação com inteligência artificial para PMEs em todo o Brasil.
           </p>
+          <div className="flex gap-3 mt-4">
+            <a href="https://instagram.com/adsfocusoficial" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-muted/20 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors" aria-label="Instagram">
+              <Instagram size={18} />
+            </a>
+          </div>
         </div>
         <div>
           <h4 className="font-heading font-bold text-sm mb-4 text-foreground">Navegação</h4>
@@ -31,11 +37,23 @@ const Footer = () => (
         </div>
         <div>
           <h4 className="font-heading font-bold text-sm mb-4 text-foreground">Contato</h4>
-          <div className="space-y-2 text-sm text-muted-foreground">
-            <p>📱 (11) 9-1576-5432</p>
-            <p>📧 contato@adsfocus.com.br</p>
-            <p>🌐 adsfocus.com.br</p>
-            <p>📸 @adsfocusoficial</p>
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <a href="tel:+551115765432" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={16} />
+              (11) 1576-5432
+            </a>
+            <a href="mailto:contato@adsfocus.com.br" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Mail size={16} />
+              contato@adsfocus.com.br
+            </a>
+            <a href="https://adsfocus.com.br" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Globe size={16} />
+              adsfocus.com.br
+            </a>
+            <a href="https://instagram.com/adsfocusoficial" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Instagram size={16} />
+              @adsfocusoficial
+            </a>
           </div>
         </div>
       </div>

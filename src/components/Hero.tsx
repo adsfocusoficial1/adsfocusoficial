@@ -51,7 +51,7 @@ const Hero = () => {
               className="flex flex-wrap gap-3 pt-2"
               style={{ animation: isVisible ? 'fade-in-up 0.6s ease-out 0.4s forwards' : 'none', opacity: 0 }}
             >
-              {['Meta Ads', 'Google Ads', 'Google Meu Negócio', 'WhatsApp AI', 'N8N'].map((badge) => (
+              {['Meta Ads', 'Google Ads', 'Google Meu Negócio', 'WhatsApp com IA'].map((badge) => (
                 <span key={badge} className="text-xs font-mono text-muted-foreground bg-muted/50 px-3 py-1 rounded-full border border-border">
                   {badge}
                 </span>
