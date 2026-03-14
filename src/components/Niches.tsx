@@ -1,9 +1,9 @@
 import { useScrollReveal } from '@/hooks/useScrollAnimations';
 
 const niches = [
-  { icon: '🌐', name: 'Provedores de Internet', desc: 'Captar assinantes e reduzir CAC' },
+  { icon: '🌐', name: 'Provedores de Internet', desc: 'Captar mais assinantes com menor custo' },
   { icon: '🏗️', name: 'Reformas de Alto Padrão', desc: 'Orçamentos de clientes premium' },
-  { icon: '🪟', name: 'Esquadrias de Alumínio', desc: 'Leads B2B com construtoras e arquitetos' },
+  { icon: '🪟', name: 'Esquadrias de Alumínio', desc: 'Contatos qualificados de construtoras e arquitetos' },
   { icon: '🏠', name: 'Imobiliárias', desc: 'Vender e alugar mais rápido' },
   { icon: '🍕', name: 'Delivery e Restaurantes', desc: 'Mais pedidos, maior faturamento' },
   { icon: '🛋️', name: 'Limpeza Especializada', desc: 'Agenda lotada todo mês' },
