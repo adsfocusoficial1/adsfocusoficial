@@ -4,6 +4,7 @@ import Credibility from '@/components/Credibility';
 import Services from '@/components/Services';
 import IAInAction from '@/components/IAInAction';
 import Results from '@/components/Results';
+import Clients from '@/components/Clients';
 import Niches from '@/components/Niches';
 import Process from '@/components/Process';
 import Differentials from '@/components/Differentials';
@@ -22,6 +23,7 @@ const Index = () => {
       <Services />
       <IAInAction />
       <Results />
+      <Clients />
       <Niches />
       <Process />
       <Differentials />

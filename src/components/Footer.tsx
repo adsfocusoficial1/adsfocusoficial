@@ -1,4 +1,4 @@
-import logoLight from '@/assets/logo-light.png';
+import logoLight from '@/assets/adsfocus-logo-horizontal.png';
 import { Instagram, Phone, Mail, Globe } from 'lucide-react';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/constants';
 
@@ -7,6 +7,7 @@ const footerLinks = [
   { label: 'Serviços', href: '#servicos' },
   { label: 'IA em Ação', href: '#ia-em-acao' },
   { label: 'Resultados', href: '#resultados' },
+  { label: 'Clientes', href: '#clientes' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Contato', href: '#contato' },
 ];
@@ -16,7 +17,12 @@ const Footer = () => (
     <div className="container mx-auto px-4">
       <div className="grid md:grid-cols-3 gap-10 mb-10">
         <div>
-          <img src={logoLight} alt="ADSFOCUS" className="h-10 mb-4" />
+          <img
+            src={logoLight}
+            alt="ADSFOCUS"
+            className="h-16 w-auto object-contain mb-4"
+            style={{ objectPosition: 'left center' }}
+          />
           <p className="text-sm text-muted-foreground leading-relaxed">
             Inovação que Conecta e Converte. Estratégia de tráfego pago e automação com inteligência artificial para PMEs em todo o Brasil.
           </p>

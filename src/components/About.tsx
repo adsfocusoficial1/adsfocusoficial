@@ -1,5 +1,6 @@
 import { useScrollReveal } from '@/hooks/useScrollAnimations';
-import joaoBento from '@/assets/joao-bento.png';
+
+const joaoBento = '/images/joao-bento.png';
 
 const skills = ['Tráfego Pago', 'Inteligência Artificial', 'Automação', 'Estratégia Digital'];
 

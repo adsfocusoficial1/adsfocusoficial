@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { WHATSAPP_LINK, CTA_PRIMARY_LABEL } from '@/lib/constants';
-import logoLight from '@/assets/logo-light.png';
+import logoLight from '@/assets/adsfocus-logo-horizontal.png';
 
 const NAV_ITEMS = [
   { label: 'Início', href: '#inicio' },
   { label: 'Serviços', href: '#servicos' },
   { label: 'IA em Ação', href: '#ia-em-acao' },
   { label: 'Resultados', href: '#resultados' },
+  { label: 'Clientes', href: '#clientes' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Contato', href: '#contato' },
 ];
@@ -32,7 +33,12 @@ const Header = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:py-4">
         <a href="#inicio" aria-label="ADSFOCUS - Início">
-          <img src={logoLight} alt="ADSFOCUS" className="h-10 lg:h-12 w-auto" />
+          <img
+            src={logoLight}
+            alt="ADSFOCUS"
+            className="h-16 lg:h-20 w-auto object-contain"
+            style={{ objectPosition: 'left center' }}
+          />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8" aria-label="Navegação principal">
