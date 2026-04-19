@@ -22,6 +22,10 @@ const Footer = () => (
             alt="ADSFOCUS"
             className="h-10 w-auto object-contain mb-4"
             style={{ objectPosition: 'left center' }}
+            loading="lazy"
+            decoding="async"
+            width={240}
+            height={40}
           />
           <p className="text-sm text-muted-foreground leading-relaxed">
             Inovação que Conecta e Converte. Estratégia de tráfego pago e automação com inteligência artificial para PMEs em todo o Brasil.
@@ -33,7 +37,7 @@ const Footer = () => (
           </div>
         </div>
         <div>
-          <h4 className="font-heading font-bold text-sm mb-4 text-foreground">Navegação</h4>
+          <h2 className="font-heading font-bold text-sm mb-4 text-foreground">Navegação</h2>
           <nav className="space-y-2" aria-label="Footer">
             {footerLinks.map((l) => (
               <a key={l.href} href={l.href} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -43,7 +47,7 @@ const Footer = () => (
           </nav>
         </div>
         <div>
-          <h4 className="font-heading font-bold text-sm mb-4 text-foreground">Contato</h4>
+          <h2 className="font-heading font-bold text-sm mb-4 text-foreground">Contato</h2>
           <div className="space-y-3 text-sm text-muted-foreground">
             <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={16} />

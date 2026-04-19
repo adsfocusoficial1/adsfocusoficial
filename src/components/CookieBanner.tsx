@@ -87,8 +87,8 @@ const CookieBanner = () => {
           <button
             type="button"
             onClick={accept}
-            className="px-5 py-2 text-sm font-semibold rounded-lg text-white transition-all hover:brightness-110 shadow-lg"
-            style={{ backgroundColor: '#FF7500', boxShadow: '0 4px 14px rgba(255, 117, 0, 0.4)' }}
+            className="px-5 py-2 text-sm font-semibold rounded-lg transition-all hover:brightness-110 shadow-lg"
+            style={{ backgroundColor: '#FF7500', color: '#001F5B', boxShadow: '0 4px 14px rgba(255, 117, 0, 0.4)' }}
           >
             Aceitar
           </button>

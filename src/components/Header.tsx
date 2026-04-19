@@ -38,6 +38,11 @@ const Header = () => {
             alt="ADSFOCUS"
             className="h-16 lg:h-20 w-auto object-contain"
             style={{ objectPosition: 'left center' }}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={320}
+            height={80}
           />
         </a>
 
