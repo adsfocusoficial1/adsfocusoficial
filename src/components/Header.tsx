@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { WHATSAPP_LINK, CTA_PRIMARY_LABEL } from '@/lib/constants';
-import logoLight from '@/assets/adsfocus-logo-horizontal.png';
+import logoLight from '@/assets/adsfocus-logo-horizontal-light.png';
 
 const NAV_ITEMS = [
   { label: 'Início', href: '#inicio' },

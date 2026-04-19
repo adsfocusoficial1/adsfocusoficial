@@ -10,6 +10,7 @@ import Process from '@/components/Process';
 import Differentials from '@/components/Differentials';
 import About from '@/components/About';
 import FAQ from '@/components/FAQ';
+import ContactForm from '@/components/ContactForm';
 import CTAFinal from '@/components/CTAFinal';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -29,6 +30,7 @@ const Index = () => {
       <Differentials />
       <About />
       <FAQ />
+      <ContactForm />
       <CTAFinal />
       <Footer />
       <WhatsAppButton />

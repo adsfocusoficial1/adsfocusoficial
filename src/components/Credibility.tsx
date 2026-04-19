@@ -1,7 +1,7 @@
 import { useCountUp } from '@/hooks/useScrollAnimations';
 
 const metrics = [
-  { value: 20, prefix: '', suffix: '+', label: 'Anos em TELECOM (OI · Claro · VTAL)' },
+  { value: 20, prefix: '', suffix: '+', label: 'Anos em telecomunicações' },
   { value: 24, prefix: '', suffix: '/7', label: 'Atendimento IA' },
   { value: 100, prefix: '', suffix: '%', label: 'Transparência' },
 ];
@@ -22,7 +22,7 @@ const Credibility = () => (
   <section className="section-dark py-12 lg:py-16 border-t border-b border-border">
     <div className="container mx-auto px-4">
       <p className="text-center text-sm lg:text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
-        Mais de 20 anos em telecom (OI · Claro · VTAL). Agora, essa experiência operacional a serviço do seu crescimento digital com tráfego pago e automação em IA.
+        Mais de 20 anos de experiência em telecomunicações no Brasil. Essa bagagem operacional agora a serviço do seu crescimento digital com tráfego pago e automação em IA.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
         {metrics.map((m) => (

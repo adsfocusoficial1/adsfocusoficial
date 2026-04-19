@@ -211,6 +211,19 @@
     50% { text-shadow: 0 0 20px hsl(217 91% 60% / 0.5); }
   }
 
+  /* Logo marquee (client carousel) */
+  @keyframes logo-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .logo-marquee {
+    width: max-content;
+    animation: logo-marquee 30s linear infinite;
+  }
+  .logo-marquee:hover {
+    animation-play-state: paused;
+  }
+
   /* Scroll reveal */
   .reveal {
     opacity: 0;

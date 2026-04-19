@@ -1,4 +1,4 @@
-import logoLight from '@/assets/adsfocus-logo-horizontal.png';
+import logoLight from '@/assets/adsfocus-logo-extenso-light.png';
 import { Instagram, Phone, Mail, Globe } from 'lucide-react';
 import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/constants';
 
@@ -20,7 +20,7 @@ const Footer = () => (
           <img
             src={logoLight}
             alt="ADSFOCUS"
-            className="h-16 w-auto object-contain mb-4"
+            className="h-10 w-auto object-contain mb-4"
             style={{ objectPosition: 'left center' }}
           />
           <p className="text-sm text-muted-foreground leading-relaxed">
