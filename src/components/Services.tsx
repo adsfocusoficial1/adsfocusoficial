@@ -28,8 +28,8 @@ const services: Service[] = [
     icon: MapPin,
     name: 'Google Meu Negócio',
     image:
-      'https://images.unsplash.com/photo-1596568359553-a56de6970068?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Avaliações cinco estrelas em celular com Google Maps',
+      'https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Celular exibindo perfil de negócio no Google Maps com avaliações e direções',
     headline: '5 Estrelas no Google. Agenda Cheia Todo Mês.',
     bullets: [
       'Apareça no topo do Google Maps',
