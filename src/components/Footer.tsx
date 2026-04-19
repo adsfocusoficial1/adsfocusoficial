@@ -66,7 +66,14 @@ const Footer = () => (
       </div>
       <div className="border-t border-border pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-xs text-muted-foreground">© 2026 ADSFOCUS — Todos os direitos reservados</p>
-        <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">Política de Privacidade</a>
+        <nav className="flex gap-5 text-xs" aria-label="Links legais">
+          <a href="/politica-de-privacidade" className="text-muted-foreground hover:text-primary transition-colors">
+            Política de Privacidade
+          </a>
+          <a href="/termos-de-uso" className="text-muted-foreground hover:text-primary transition-colors">
+            Termos de Uso
+          </a>
+        </nav>
       </div>
     </div>
   </footer>
