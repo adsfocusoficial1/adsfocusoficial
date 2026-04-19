@@ -1,4 +1,4 @@
-import { WHATSAPP_LINK } from '@/lib/constants';
+import { WHATSAPP_LINK, CTA_PRIMARY_LABEL } from '@/lib/constants';
 import { useScrollReveal } from '@/hooks/useScrollAnimations';
 
 const Hero = () => {
@@ -40,7 +40,7 @@ const Hero = () => {
               style={{ animation: isVisible ? 'fade-in-up 0.6s ease-out 0.3s forwards' : 'none', opacity: 0 }}
             >
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary-cta">
-                Quero Crescer com IA →
+                {CTA_PRIMARY_LABEL} →
               </a>
               <a href="#ia-em-acao" className="btn-outline-cta">
                 Veja a IA em Ação ↓

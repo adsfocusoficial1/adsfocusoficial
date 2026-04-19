@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { WHATSAPP_LINK } from '@/lib/constants';
+import { WHATSAPP_LINK, CTA_PRIMARY_LABEL } from '@/lib/constants';
 import logoLight from '@/assets/logo-light.png';
 
 const NAV_ITEMS = [
@@ -54,7 +54,7 @@ const Header = () => {
             rel="noopener noreferrer"
             className="btn-primary-cta !px-6 !py-2.5 !text-sm"
           >
-            Análise Gratuita →
+            {CTA_PRIMARY_LABEL} →
           </a>
         </div>
 
@@ -95,7 +95,7 @@ const Header = () => {
                 className="btn-primary-cta mt-4 !text-sm text-center"
                 onClick={() => setMobileOpen(false)}
               >
-                Análise Gratuita →
+                {CTA_PRIMARY_LABEL} →
               </a>
             </nav>
           </div>

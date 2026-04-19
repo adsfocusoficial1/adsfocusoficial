@@ -1,5 +1,6 @@
 import logoLight from '@/assets/logo-light.png';
 import { Instagram, Phone, Mail, Globe } from 'lucide-react';
+import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/constants';
 
 const footerLinks = [
   { label: 'Início', href: '#inicio' },
@@ -38,9 +39,9 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-bold text-sm mb-4 text-foreground">Contato</h4>
           <div className="space-y-3 text-sm text-muted-foreground">
-            <a href="tel:+551115765432" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={16} />
-              (11) 1576-5432
+              {PHONE_DISPLAY}
             </a>
             <a href="mailto:contato@adsfocus.com.br" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={16} />

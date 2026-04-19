@@ -1,4 +1,4 @@
-import { WHATSAPP_LINK_CTA } from '@/lib/constants';
+import { WHATSAPP_LINK_CTA, CTA_PRIMARY_LABEL } from '@/lib/constants';
 import { useScrollReveal } from '@/hooks/useScrollAnimations';
 
 const CTAFinal = () => {
@@ -24,7 +24,7 @@ const CTAFinal = () => {
             rel="noopener noreferrer"
             className="btn-primary-cta text-xl px-12 py-5 whatsapp-pulse"
           >
-            Falar com a ADSFOCUS →
+            {CTA_PRIMARY_LABEL} →
           </a>
           <p className="text-xs text-muted-foreground mt-6">
             Resposta em até 2 horas em horário comercial

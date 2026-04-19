@@ -1,5 +1,5 @@
 import { useScrollReveal } from '@/hooks/useScrollAnimations';
-import { WHATSAPP_LINK } from '@/lib/constants';
+import { WHATSAPP_LINK, CTA_PRIMARY_LABEL } from '@/lib/constants';
 import { Clock, Brain, DollarSign, Target, MessageSquare, BarChart3 } from 'lucide-react';
 
 const benefits = [
@@ -110,7 +110,7 @@ const IAInAction = () => {
               Resultado: você foca em vender para quem está pronto, enquanto a IA cuida de todo o resto.
             </p>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary-cta inline-flex">
-              Quero um Agente de IA →
+              {CTA_PRIMARY_LABEL} →
             </a>
           </div>
         </div>
