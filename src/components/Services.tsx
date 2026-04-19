@@ -1,5 +1,5 @@
 import { useScrollReveal } from '@/hooks/useScrollAnimations';
-import { TrendingUp, Bot, ChevronRight } from 'lucide-react';
+import { TrendingUp, Bot, MousePointerClick, ChevronRight } from 'lucide-react';
 
 const trafegoItems = [
   'Meta Ads (Facebook + Instagram) — Campanhas segmentadas com criativos que convertem',
@@ -17,6 +17,14 @@ const iaItems = [
   'Chatbots para site e redes sociais — Captação de leads automatizada',
 ];
 
+const landingItems = [
+  'Copy estratégica — Headlines e ofertas construídas para converter, não só para informar',
+  'Design focado em ação — CTA evidente, hierarquia visual clara, zero distração',
+  'Mobile-first — 80% do tráfego pago chega pelo celular; a página é pensada pra ele',
+  'Integração com tráfego — Pixel, UTMs e eventos prontos para Meta e Google Ads',
+  'Velocidade máxima — Carregamento rápido que não derruba sua taxa de conversão',
+];
+
 const Services = () => {
   const { ref, isVisible } = useScrollReveal();
 
@@ -25,14 +33,14 @@ const Services = () => {
       <div className="container mx-auto px-4" ref={ref}>
         <div className={`text-center mb-14 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="font-heading font-extrabold text-3xl lg:text-4xl mb-4" style={{ color: 'hsl(217 33% 17%)' }}>
-            Duas Forças. Um Objetivo.
+            Três Forças. Um Objetivo.
           </h2>
           <p className="text-base lg:text-lg max-w-2xl mx-auto" style={{ color: 'hsl(215 20% 45%)' }}>
-            Combinamos a precisão do tráfego pago com a inteligência de agentes de IA. Juntas, essas forças se multiplicam.
+            Tráfego pago, landing pages de alta conversão e agentes de IA. Uma engrenagem pensada de ponta a ponta para gerar e converter clientes.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Tráfego Pago */}
           <div
             className={`rounded-2xl p-8 lg:p-10 border shadow-lg transition-all ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
@@ -64,11 +72,42 @@ const Services = () => {
             </a>
           </div>
 
-          {/* IA */}
+          {/* Landing Pages */}
           <div
             className={`rounded-2xl p-8 lg:p-10 border shadow-lg transition-all ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
             style={{
               animationDelay: '0.3s',
+              backgroundColor: 'white',
+              borderColor: 'hsl(214 32% 91%)',
+            }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'hsl(25 95% 53% / 0.1)' }}>
+                <MousePointerClick className="text-accent" size={24} />
+              </div>
+              <h3 className="font-heading font-bold text-xl" style={{ color: 'hsl(217 33% 17%)' }}>Landing Pages de Alta Conversão</h3>
+            </div>
+            <p className="mb-6" style={{ color: 'hsl(215 20% 45%)' }}>
+              Páginas criadas para converter visitantes em clientes. Copy estratégica, design focado em ação e integração com suas campanhas de tráfego pago.
+            </p>
+            <ul className="space-y-3">
+              {landingItems.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm" style={{ color: 'hsl(217 33% 30%)' }}>
+                  <ChevronRight size={16} className="text-accent mt-0.5 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="#contato" className="inline-flex items-center gap-1 mt-8 text-sm font-semibold text-accent hover:underline">
+              Saber mais →
+            </a>
+          </div>
+
+          {/* IA */}
+          <div
+            className={`rounded-2xl p-8 lg:p-10 border shadow-lg transition-all ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+            style={{
+              animationDelay: '0.45s',
               backgroundColor: 'white',
               borderColor: 'hsl(214 32% 91%)',
             }}
