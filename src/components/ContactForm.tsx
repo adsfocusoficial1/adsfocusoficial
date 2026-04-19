@@ -1,13 +1,43 @@
 import { useState, FormEvent } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollAnimations';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/maqajgyp';
+
 const ContactForm = () => {
   const { ref, isVisible } = useScrollReveal();
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (sending) return;
+    setError(null);
+    setSending(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        const body = await res.json().catch(() => ({}));
+        const msg = (body?.errors?.[0]?.message as string | undefined) ?? 'Não foi possível enviar agora. Tente novamente em instantes.';
+        setError(msg);
+      }
+    } catch {
+      setError('Falha de conexão. Verifique sua internet e tente novamente.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -34,12 +64,15 @@ const ContactForm = () => {
 
         <form
           onSubmit={handleSubmit}
+          action={FORMSPREE_ENDPOINT}
+          method="POST"
           className={`max-w-xl mx-auto glass-card p-6 lg:p-8 rounded-2xl space-y-5 ${
             isVisible ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.15s' }}
-          noValidate
         >
+          <input type="hidden" name="_subject" value="Novo lead do site ADSFOCUS" />
+          <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
           {submitted ? (
             <div className="text-center py-8">
               <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 text-primary flex items-center justify-center mx-auto mb-4 text-2xl">
@@ -109,9 +142,19 @@ const ContactForm = () => {
                 />
               </div>
 
-              <button type="submit" className="btn-primary-cta w-full justify-center">
-                Quero uma análise gratuita →
+              <button
+                type="submit"
+                disabled={sending}
+                className="btn-primary-cta w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {sending ? 'Enviando...' : 'Quero uma análise gratuita →'}
               </button>
+
+              {error && (
+                <p role="alert" className="text-sm text-red-400 text-center">
+                  {error}
+                </p>
+              )}
 
               <p className="text-xs text-muted-foreground text-center">
                 Seus dados são tratados com confidencialidade. Não enviamos spam.

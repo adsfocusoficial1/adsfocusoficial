@@ -42,6 +42,22 @@ const clients: Client[] = [
     testimonial:
       'Contratei a implantação do agente de IA pra nosso BPO. O nível de detalhe e a entrega do João são diferentes de tudo que já vi.',
   },
+  {
+    name: 'Gustavo',
+    business: 'Gusta Lavagens',
+    instagram: 'gusta_lavagens17',
+    avatar: '/images/clients/gusta_lavagens17.jpg',
+    testimonial:
+      'O Meta Ads começou a trazer cliente novo toda semana. Fez a fila de agendamento crescer e ainda ficou organizado.',
+  },
+  {
+    name: 'Silvio Ranzuny',
+    business: "Tasty's Burguer",
+    instagram: 'tastysburguer.ofc',
+    avatar: '/images/clients/tastysburguer_ofc.jpg',
+    testimonial:
+      'Com a ADSFOCUS cuidando do Meta Ads, o movimento na hamburgueria subiu de verdade. Virou rotina pedido novo chegando pelo anúncio.',
+  },
 ];
 
 const Clients = () => {
@@ -100,7 +116,7 @@ const Clients = () => {
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {clients.map((client, i) => (
             <figure
               key={client.instagram}
