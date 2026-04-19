@@ -7,7 +7,6 @@ const metrics = [
     prefix: '',
     suffix: '+',
     label: 'Anos em telecom',
-    sub: 'Bagagem operacional',
     icon: Radio,
   },
   {
@@ -15,7 +14,6 @@ const metrics = [
     prefix: '',
     suffix: '',
     label: 'Nichos atendidos',
-    sub: 'Expertise aplicada',
     icon: Target,
   },
   {
@@ -23,14 +21,13 @@ const metrics = [
     prefix: '',
     suffix: '%',
     label: 'Transparência',
-    sub: 'Relatórios abertos',
     icon: FileCheck,
   },
 ];
 
 type Metric = (typeof metrics)[number];
 
-const MetricItem = ({ value, prefix, suffix, label, sub, icon: Icon }: Metric) => {
+const MetricItem = ({ value, prefix, suffix, label, icon: Icon }: Metric) => {
   const { count, ref } = useCountUp(value, 1500);
   return (
     <div
@@ -57,7 +54,6 @@ const MetricItem = ({ value, prefix, suffix, label, sub, icon: Icon }: Metric) =
       <div className="mt-3 text-sm lg:text-base text-white font-heading font-bold uppercase tracking-wider">
         {label}
       </div>
-      <div className="mt-1 text-xs text-white/50 uppercase tracking-wider">{sub}</div>
     </div>
   );
 };
@@ -78,7 +74,7 @@ const Credibility = () => (
           Autoridade &amp; Confiança
         </span>
         <p className="text-base lg:text-lg text-white/75 leading-relaxed">
-          Mais de <strong className="text-white">20 anos de experiência em telecomunicações no Brasil</strong>. Essa bagagem operacional agora a serviço do seu crescimento digital com tráfego pago e automação em IA.
+          Precisão técnica de quem operou <strong className="text-white">redes críticas no Brasil</strong>, aplicada para crescer o seu negócio no digital.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 max-w-5xl mx-auto">
