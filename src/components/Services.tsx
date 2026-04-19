@@ -3,6 +3,7 @@ import { Search, MapPin, ShoppingBag, Instagram, MousePointerClick, Bot, Check }
 
 type Service = {
   icon: typeof Search;
+  name: string;
   image: string;
   imageAlt: string;
   headline: string;
@@ -12,10 +13,11 @@ type Service = {
 const services: Service[] = [
   {
     icon: Search,
+    name: 'Google Ads',
     image:
       'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Pessoa pesquisando no Google pelo celular',
-    headline: 'Apareça na Hora Que Seu Cliente Está Procurando',
+    headline: 'Seu Cliente Pesquisou. Seu Anúncio Apareceu. Vendeu.',
     bullets: [
       'Apareça no topo das buscas do Google',
       'Pague só quando clicarem no seu anúncio',
@@ -24,10 +26,11 @@ const services: Service[] = [
   },
   {
     icon: MapPin,
+    name: 'Google Meu Negócio',
     image:
-      'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Mapa no celular com localização de negócio',
-    headline: 'Seja Encontrado no Google Maps Antes da Concorrência',
+      'https://images.unsplash.com/photo-1596568359553-a56de6970068?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Avaliações cinco estrelas em celular com Google Maps',
+    headline: '5 Estrelas no Google. Agenda Cheia Todo Mês.',
     bullets: [
       'Apareça no topo do Google Maps',
       'Gestão profissional de avaliações',
@@ -36,10 +39,11 @@ const services: Service[] = [
   },
   {
     icon: ShoppingBag,
+    name: 'Google Merchant Center',
     image:
       'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Carrinho de compras digital e etiquetas de produto',
-    headline: 'Seus Produtos na Frente de Quem Quer Comprar',
+    headline: 'Seus Produtos no Google Antes da Concorrência Chegar',
     bullets: [
       'Produtos aparecem nas buscas do Google',
       'Catálogo digital sempre atualizado',
@@ -48,6 +52,7 @@ const services: Service[] = [
   },
   {
     icon: Instagram,
+    name: 'Meta Ads',
     image:
       'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Celular mostrando feed do Instagram',
@@ -60,6 +65,7 @@ const services: Service[] = [
   },
   {
     icon: MousePointerClick,
+    name: 'Landing Pages',
     image:
       'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Mockup de landing page em desktop e mobile',
@@ -72,6 +78,7 @@ const services: Service[] = [
   },
   {
     icon: Bot,
+    name: 'Automação com IA',
     image:
       'https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Atendimento automatizado por IA no celular',
@@ -134,6 +141,12 @@ const ServiceCard = ({
       </div>
 
       <div className="flex-1 flex flex-col p-6 lg:p-7">
+        <span
+          className="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-2"
+          style={{ color: '#FF7500' }}
+        >
+          {service.name}
+        </span>
         <h3
           className="service-headline font-heading font-extrabold text-lg lg:text-xl leading-tight mb-5"
           style={{ color: 'hsl(217 33% 17%)' }}
