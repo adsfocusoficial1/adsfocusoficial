@@ -262,6 +262,49 @@
     animation-play-state: paused;
   }
 
+  /* Service card float (only on hover) */
+  @keyframes service-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .service-card .service-media {
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover .service-media {
+    animation: service-float 2.4s ease-in-out infinite;
+  }
+
+  /* Service card hover */
+  .service-card {
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, transparent, #FF7500, transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px -10px rgba(0, 31, 91, 0.18), 0 0 0 1px rgba(255, 117, 0, 0.2);
+  }
+  .service-card:hover::after {
+    transform: scaleX(1);
+  }
+  .service-card:hover .service-headline {
+    color: #FF7500;
+  }
+  .service-headline {
+    transition: color 0.3s ease;
+  }
+
   /* Scroll reveal */
   .reveal {
     opacity: 0;

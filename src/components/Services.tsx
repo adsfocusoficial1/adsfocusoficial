@@ -1,138 +1,202 @@
 import { useScrollReveal } from '@/hooks/useScrollAnimations';
-import { TrendingUp, Bot, MousePointerClick, ChevronRight } from 'lucide-react';
+import { Search, MapPin, ShoppingBag, Instagram, MousePointerClick, Bot, Check } from 'lucide-react';
 
-const trafegoItems = [
-  'Meta Ads (Facebook + Instagram) — Campanhas segmentadas com criativos que convertem',
-  'Google Ads (Search + Display) — Apareça para quem busca seu serviço agora',
-  'Google Meu Negócio (GBP) — Domine as buscas locais e o Google Maps',
-  'Relatórios transparentes — CPL, CPC, ROAS, tudo aberto e claro',
-  'Otimização contínua — Testes A/B, ajuste de público, criativos e lances',
+type Service = {
+  icon: typeof Search;
+  image: string;
+  imageAlt: string;
+  headline: string;
+  bullets: string[];
+};
+
+const services: Service[] = [
+  {
+    icon: Search,
+    image:
+      'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Pessoa pesquisando no Google pelo celular',
+    headline: 'Apareça na Hora Que Seu Cliente Está Procurando',
+    bullets: [
+      'Apareça no topo das buscas do Google',
+      'Pague só quando clicarem no seu anúncio',
+      'Campanhas otimizadas para conversão real',
+    ],
+  },
+  {
+    icon: MapPin,
+    image:
+      'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mapa no celular com localização de negócio',
+    headline: 'Seja Encontrado no Google Maps Antes da Concorrência',
+    bullets: [
+      'Apareça no topo do Google Maps',
+      'Gestão profissional de avaliações',
+      'Mais chamadas e visitas diretas',
+    ],
+  },
+  {
+    icon: ShoppingBag,
+    image:
+      'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Carrinho de compras digital e etiquetas de produto',
+    headline: 'Seus Produtos na Frente de Quem Quer Comprar',
+    bullets: [
+      'Produtos aparecem nas buscas do Google',
+      'Catálogo digital sempre atualizado',
+      'Mais vendas com menos custo por clique',
+    ],
+  },
+  {
+    icon: Instagram,
+    image:
+      'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Celular mostrando feed do Instagram',
+    headline: 'Conquiste Clientes Todos os Dias no Instagram e Facebook',
+    bullets: [
+      'Anúncios que param o scroll e convertem',
+      'Segmentação precisa do seu público ideal',
+      'Criativos profissionais que geram resultado',
+    ],
+  },
+  {
+    icon: MousePointerClick,
+    image:
+      'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mockup de landing page em desktop e mobile',
+    headline: 'Páginas Que Transformam Visitantes em Clientes',
+    bullets: [
+      'Design focado em conversão',
+      'Integrada com suas campanhas de tráfego',
+      'Carregamento rápido em qualquer dispositivo',
+    ],
+  },
+  {
+    icon: Bot,
+    image:
+      'https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Atendimento automatizado por IA no celular',
+    headline: 'Seu Negócio Vendendo e Atendendo 24h por Dia',
+    bullets: [
+      'Agente de IA atende e qualifica leads 24/7',
+      'Integração com WhatsApp Business',
+      'Você foca no negócio, a IA faz o resto',
+    ],
+  },
 ];
 
-const iaItems = [
-  'Agentes de IA para WhatsApp — Atendimento automático com catálogo, preços e qualificação',
-  'SDR Virtual — Seu vendedor digital que nunca dorme e nunca esquece de fazer follow-up',
-  'RAG Inteligente — IA que consulta seus PDFs, catálogos e planilhas em tempo real',
-  'Automação de Processos (N8N) — Integrações com CRM, Google Sheets, e-commerce',
-  'Chatbots para site e redes sociais — Captação de leads automatizada',
-];
+const ServiceCard = ({
+  service,
+  index,
+  isVisible,
+}: {
+  service: Service;
+  index: number;
+  isVisible: boolean;
+}) => {
+  const Icon = service.icon;
+  return (
+    <article
+      className={`service-card rounded-2xl bg-white border shadow-lg overflow-hidden flex flex-col ${
+        isVisible ? 'animate-fade-in-up' : 'opacity-0'
+      }`}
+      style={{
+        animationDelay: `${index * 100}ms`,
+        borderColor: 'hsl(214 32% 91%)',
+      }}
+    >
+      <div className="service-media relative h-48 overflow-hidden bg-gradient-to-br from-[#001F5B] to-[#0A3A8F]">
+        <img
+          src={service.image}
+          alt={service.imageAlt}
+          loading="lazy"
+          decoding="async"
+          width={800}
+          height={480}
+          className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(135deg, rgba(0, 31, 91, 0.55), rgba(0, 31, 91, 0.25))',
+          }}
+        />
+        <div
+          className="absolute top-4 left-4 w-12 h-12 rounded-xl flex items-center justify-center"
+          style={{
+            backgroundColor: 'rgba(255, 117, 0, 0.95)',
+            boxShadow: '0 6px 20px rgba(255, 117, 0, 0.45)',
+          }}
+        >
+          <Icon size={22} color="#001F5B" strokeWidth={2.4} />
+        </div>
+      </div>
 
-const landingItems = [
-  'Copy estratégica — Headlines e ofertas construídas para converter, não só para informar',
-  'Design focado em ação — CTA evidente, hierarquia visual clara, zero distração',
-  'Mobile-first — 80% do tráfego pago chega pelo celular; a página é pensada pra ele',
-  'Integração com tráfego — Pixel, UTMs e eventos prontos para Meta e Google Ads',
-  'Velocidade máxima — Carregamento rápido que não derruba sua taxa de conversão',
-];
+      <div className="flex-1 flex flex-col p-6 lg:p-7">
+        <h3
+          className="service-headline font-heading font-extrabold text-lg lg:text-xl leading-tight mb-5"
+          style={{ color: 'hsl(217 33% 17%)' }}
+        >
+          {service.headline}
+        </h3>
+        <ul className="space-y-2.5 flex-1">
+          {service.bullets.map((b) => (
+            <li
+              key={b}
+              className="flex items-start gap-2 text-sm"
+              style={{ color: 'hsl(217 33% 30%)' }}
+            >
+              <Check
+                size={16}
+                className="mt-0.5 shrink-0"
+                style={{ color: '#FF7500' }}
+                strokeWidth={3}
+              />
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
+};
 
 const Services = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="servicos" className="section-light py-20 lg:py-28" style={{ backgroundColor: 'hsl(210 40% 98%)', color: 'hsl(217 33% 17%)' }}>
+    <section
+      id="servicos"
+      className="section-light py-20 lg:py-28"
+      style={{ backgroundColor: 'hsl(210 40% 98%)', color: 'hsl(217 33% 17%)' }}
+    >
       <div className="container mx-auto px-4" ref={ref}>
         <div className={`text-center mb-14 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h2 className="font-heading font-extrabold text-3xl lg:text-4xl mb-4" style={{ color: 'hsl(217 33% 17%)' }}>
-            Três Forças. Um Objetivo.
+          <span
+            className="inline-block text-xs uppercase tracking-[0.2em] font-semibold mb-3"
+            style={{ color: '#FF7500' }}
+          >
+            Nossos Serviços
+          </span>
+          <h2
+            className="font-heading font-extrabold text-3xl lg:text-4xl mb-4"
+            style={{ color: 'hsl(217 33% 17%)' }}
+          >
+            Tudo Que Seu Negócio Precisa Para Crescer
           </h2>
-          <p className="text-base lg:text-lg max-w-2xl mx-auto" style={{ color: 'hsl(215 20% 45%)' }}>
-            Tráfego pago, landing pages de alta conversão e agentes de IA. Uma engrenagem pensada de ponta a ponta para gerar e converter clientes.
+          <p
+            className="text-base lg:text-lg max-w-2xl mx-auto"
+            style={{ color: 'hsl(215 20% 45%)' }}
+          >
+            Seis frentes integradas de tráfego, conversão e automação — trabalhando juntas para gerar e converter clientes todos os dias.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Tráfego Pago */}
-          <div
-            className={`rounded-2xl p-8 lg:p-10 border shadow-lg transition-all ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-            style={{
-              animationDelay: '0.15s',
-              backgroundColor: 'white',
-              borderColor: 'hsl(214 32% 91%)',
-            }}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'hsl(25 95% 53% / 0.1)' }}>
-                <TrendingUp className="text-accent" size={24} />
-              </div>
-              <h3 className="font-heading font-bold text-xl" style={{ color: 'hsl(217 33% 17%)' }}>Tráfego Pago Estratégico</h3>
-            </div>
-            <p className="mb-6" style={{ color: 'hsl(215 20% 45%)' }}>
-              Campanhas que colocam seu negócio na frente de quem está comprando — agora.
-            </p>
-            <ul className="space-y-3">
-              {trafegoItems.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm" style={{ color: 'hsl(217 33% 30%)' }}>
-                  <ChevronRight size={16} className="text-accent mt-0.5 shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <a href="#contato" className="inline-flex items-center gap-1 mt-8 text-sm font-semibold text-accent hover:underline">
-              Saber mais →
-            </a>
-          </div>
-
-          {/* Landing Pages */}
-          <div
-            className={`rounded-2xl p-8 lg:p-10 border shadow-lg transition-all ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-            style={{
-              animationDelay: '0.3s',
-              backgroundColor: 'white',
-              borderColor: 'hsl(214 32% 91%)',
-            }}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'hsl(25 95% 53% / 0.1)' }}>
-                <MousePointerClick className="text-accent" size={24} />
-              </div>
-              <h3 className="font-heading font-bold text-xl" style={{ color: 'hsl(217 33% 17%)' }}>Landing Pages de Alta Conversão</h3>
-            </div>
-            <p className="mb-6" style={{ color: 'hsl(215 20% 45%)' }}>
-              Páginas criadas para converter visitantes em clientes. Copy estratégica, design focado em ação e integração com suas campanhas de tráfego pago.
-            </p>
-            <ul className="space-y-3">
-              {landingItems.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm" style={{ color: 'hsl(217 33% 30%)' }}>
-                  <ChevronRight size={16} className="text-accent mt-0.5 shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <a href="#contato" className="inline-flex items-center gap-1 mt-8 text-sm font-semibold text-accent hover:underline">
-              Saber mais →
-            </a>
-          </div>
-
-          {/* IA */}
-          <div
-            className={`rounded-2xl p-8 lg:p-10 border shadow-lg transition-all ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-            style={{
-              animationDelay: '0.45s',
-              backgroundColor: 'white',
-              borderColor: 'hsl(214 32% 91%)',
-            }}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'hsl(217 91% 60% / 0.1)' }}>
-                <Bot className="text-primary" size={24} />
-              </div>
-              <h3 className="font-heading font-bold text-xl" style={{ color: 'hsl(217 33% 17%)' }}>Automação & Agentes de IA</h3>
-            </div>
-            <p className="mb-6" style={{ color: 'hsl(215 20% 45%)' }}>
-              Agentes inteligentes que trabalham 24h vendendo, qualificando e atendendo seus clientes.
-            </p>
-            <ul className="space-y-3">
-              {iaItems.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm" style={{ color: 'hsl(217 33% 30%)' }}>
-                  <ChevronRight size={16} className="text-primary mt-0.5 shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <a href="#contato" className="inline-flex items-center gap-1 mt-8 text-sm font-semibold text-primary hover:underline">
-              Saber mais →
-            </a>
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {services.map((service, i) => (
+            <ServiceCard key={service.headline} service={service} index={i} isVisible={isVisible} />
+          ))}
         </div>
       </div>
     </section>
